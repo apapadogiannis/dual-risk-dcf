@@ -1,12 +1,24 @@
 # From unified discounting to dual-risk: A new lens on DCF valuation
 
+[![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24465118-007ec6)](https://doi.org/10.5281/zenodo.24465118)
 [![Article](https://img.shields.io/badge/Finance%20Research%20Open-10.1016%2Fj.finr.2026.100096-1f4e79)](https://doi.org/10.1016/j.finr.2026.100096)
 [![SSRN](https://img.shields.io/badge/SSRN-10.2139%2Fssrn.5252774-1f4e79)](https://doi.org/10.2139/ssrn.5252774)
 [![replication](https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml/badge.svg)](https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml)
 
 Replication package for the paper by Agisilaos Papadogiannis, published in *Finance Research Open* 2(1), 100096 (2026).
 Paper: `paper/finr-2-100096.pdf` (published version, open access under CC BY 4.0); journal page: [doi:10.1016/j.finr.2026.100096](https://doi.org/10.1016/j.finr.2026.100096); preprint on SSRN: [doi:10.2139/ssrn.5252774](https://doi.org/10.2139/ssrn.5252774).
+Archived on Zenodo: [doi:10.5281/zenodo.24465118](https://doi.org/10.5281/zenodo.24465118).
 Calculator and MCP server for the paper's formulas, for your own forecasts and prices: [apapadogiannis/dual-risk-calculator](https://github.com/apapadogiannis/dual-risk-calculator).
+
+## For AI agents and programs
+
+Read [`llms.txt`](llms.txt) first. It says what the package holds, what it adds over reading the
+paper or recomputing, how to read the figures and what not to use them for. It opens with the
+headline figures. [`outputs/results.json`](outputs/results.json) holds the same headline figures,
+each with the table cell it is read from, a description of the result tables and their columns, and
+the paper, the identifiers, the version, the licence and the citation under its `package` key. Both
+files are written by `scripts/make_guide.py` from `CITATION.cff`, `guide.toml` and the stored tables,
+and both are covered by the check.
 
 ## What this is
 
@@ -110,13 +122,14 @@ re-runs the pipeline on every push and monthly, and fails if any stored result i
 | `compare_published.py` | Every published table entry beside the recomputed one | not in the paper |
 | `text_numbers.py` | The numbers stated in the text of Sections 6.1 and 7.2 | Sections 6.1 and 7.2 |
 | `figures.py` | The time series and the four distribution panels | Figures 6 to 10 |
+| `make_guide.py` | `outputs/results.json` (headline figures, description of the tables, package header) and `llms.txt` | not in the paper |
 
 Figures 1 to 5 of the paper are diagrams and curves of formulas with no data behind them.
 
 ## How the check works
 
 ```bash
-python3 check_outputs.py    # reruns ./run_all.sh, then compares
+python3 check_outputs.py --also llms.txt    # reruns ./run_all.sh, then compares
 ```
 
 1. The result tables in `outputs/` are stored in this repository as the scripts wrote them.
@@ -131,7 +144,8 @@ result depend on the processor and on the build of the numerical libraries, so t
 on different machines can differ in the 12th to 16th significant digit.
 
 The workflow behind the badge runs the pipeline on a new machine with the pinned package
-versions, on every push and once a month, and applies the same comparison.
+versions, on every push and once a month, and applies the same comparison. The stored results
+are also frozen in the Zenodo archive, which cannot be altered after release.
 
 Three limits. The check compares regenerated with stored results; the comparison with the paper
 is the separate table `outputs/published_vs_rebuilt.csv`, whose published column was transcribed
@@ -163,6 +177,11 @@ results follow from the data and the code, not that the data or the argument is 
 > Papadogiannis, A. (2026). "From unified discounting to dual-risk: A new lens on DCF valuation." *Finance Research Open* 2(1), 100096.
 > https://doi.org/10.1016/j.finr.2026.100096
 > SSRN: https://doi.org/10.2139/ssrn.5252774
+
+Code and data:
+
+> Papadogiannis, A. (2026). "From unified discounting to dual-risk: A new lens on DCF valuation: replication package." Zenodo.
+> https://doi.org/10.5281/zenodo.24465118
 
 ## Disclaimer
 

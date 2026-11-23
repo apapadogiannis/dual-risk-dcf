@@ -9,6 +9,5 @@ for f in backtest compare_published text_numbers figures; do
 done
 mv -f ../outputs/*.pdf ../outputs/*.png ../figures/
 # The description of the result tables with the headline figures (outputs/results.json) and the guide
-# for programs and AI agents (llms.txt). They name the Zenodo archive, so they are written once
-# CITATION.cff carries its DOI.
-if grep -q '^doi:' ../CITATION.cff; then echo "== make_guide"; python3 -I make_guide.py; fi
+# for programs and AI agents (llms.txt).
+echo "== make_guide"; python3 -I make_guide.py

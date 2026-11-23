@@ -1,0 +1,266 @@
+{
+  "package": {
+    "title": "From unified discounting to dual-risk: A new lens on DCF valuation",
+    "author": {
+      "name": "Agisilaos Papadogiannis",
+      "orcid": "https://orcid.org/0009-0002-7753-7052",
+      "url": "https://github.com/apapadogiannis"
+    },
+    "status": "published article",
+    "article": {
+      "journal": "Finance Research Open",
+      "volume": 2,
+      "issue": 1,
+      "article_number": "100096",
+      "year": 2026,
+      "doi": "https://doi.org/10.1016/j.finr.2026.100096"
+    },
+    "preprint": "https://doi.org/10.2139/ssrn.5252774",
+    "repository": "https://github.com/apapadogiannis/dual-risk-dcf",
+    "archive": "https://doi.org/10.5281/zenodo.24465118",
+    "version": "1.0.0",
+    "released": "2026-11-23",
+    "data_as_of": "Daily prices from 1 January 2015 to 30 December 2024. Bitcoin and US equity data retrieved 23 November 2026; gold retrieved in 2025.",
+    "units": "Rates (c, c_eff) are fractions a year (0.13 is 13% a year). K is a ratio; the raw gain is K - 1. Shares are fractions of the weeks. Relative differences are fractions of the published value.",
+    "licence": {
+      "results": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "condition": "Reuse of the results is allowed with credit to the paper.",
+      "code": "MIT",
+      "third_party_data": "data/btc_daily.csv is the PriceUSD series of the Coin Metrics community data, licensed CC BY-NC 4.0 (non-commercial use, with attribution). data/us_market_daily.csv is from the Kenneth R. French data library, copyright Eugene F. Fama and Kenneth R. French. data/gld_daily.csv is the daily close of SPDR Gold Shares from Yahoo Finance. Third-party data keep their own terms and are not covered by the licence above."
+    },
+    "cite_as": "Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Finance Research Open, 2(1), 100096. https://doi.org/10.1016/j.finr.2026.100096",
+    "cite_package": "Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Replication package, version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.24465118",
+    "describe_as": "Papadogiannis (2026), \"From unified discounting to dual-risk: A new lens on DCF valuation\", Finance Research Open 2(1), with its replication package.",
+    "guide": "llms.txt"
+  },
+  "headline": [
+    {
+      "what": "Mean valuation ratio K of Bitcoin over 367 weeks, as published",
+      "value": 1.5632,
+      "unit": "ratio; above 1 means prices were on average below the later price discounted at c",
+      "where": "Table 4",
+      "source": {
+        "file": "outputs/published_vs_rebuilt.csv",
+        "row": {
+          "table": "table4_K",
+          "asset": "BTC",
+          "stat": "mean"
+        },
+        "column": "published"
+      }
+    },
+    {
+      "what": "Mean valuation ratio K of Bitcoin, recomputed here on Coin Metrics prices",
+      "value": 1.5609,
+      "unit": "ratio",
+      "where": "Table 4",
+      "source": {
+        "file": "outputs/table4_K_stats.csv",
+        "row": {
+          "asset": "BTC"
+        },
+        "column": "mean"
+      }
+    },
+    {
+      "what": "Standard deviation of K for Bitcoin, as published",
+      "value": 1.7933,
+      "unit": "ratio",
+      "where": "Table 4",
+      "source": {
+        "file": "outputs/published_vs_rebuilt.csv",
+        "row": {
+          "table": "table4_K",
+          "asset": "BTC",
+          "stat": "std"
+        },
+        "column": "published"
+      }
+    },
+    {
+      "what": "Standard deviation of K for VTI, as published",
+      "value": 0.2036,
+      "unit": "ratio",
+      "where": "Table 4",
+      "source": {
+        "file": "outputs/published_vs_rebuilt.csv",
+        "row": {
+          "table": "table4_K",
+          "asset": "US_MARKET",
+          "stat": "std"
+        },
+        "column": "published"
+      }
+    },
+    {
+      "what": "Standard deviation of K for gold (GLD), as published and as recomputed on the same prices",
+      "value": 0.1522,
+      "unit": "ratio",
+      "where": "Table 4",
+      "source": {
+        "file": "outputs/table4_K_stats.csv",
+        "row": {
+          "asset": "GLD"
+        },
+        "column": "std"
+      }
+    },
+    {
+      "what": "Published table entries for gold that the recomputation matches at the printed precision, of 27",
+      "value": 26,
+      "unit": "entries of 27",
+      "where": "Tables 3 to 5",
+      "source": {
+        "file": "outputs/published_vs_rebuilt_summary.csv",
+        "row": {
+          "asset": "GLD"
+        },
+        "column": "equal_as_printed"
+      }
+    },
+    {
+      "what": "Share of weeks in which gold's benchmark rate is at the 3% floor",
+      "value": 31,
+      "unit": "per cent of 419 weeks",
+      "where": "Section 7.2, paragraph on the floor",
+      "source": {
+        "file": "outputs/text_numbers.csv",
+        "row": {
+          "quantity": "share of weeks in which c is at the 3% floor",
+          "asset": "GLD"
+        },
+        "column": "value",
+        "multiplied_by": 100
+      }
+    }
+  ],
+  "tables": [
+    {
+      "file": "outputs/weekly_series.csv",
+      "what": "The weekly series, one row per week and asset, from the last week of 2016.",
+      "rows": 1257,
+      "columns": {
+        "week_ending": "the Friday that ends the week",
+        "asset": "BTC, US_MARKET or GLD",
+        "price": "the last price of the week: US dollars for BTC and GLD, an index (100 at 2 January 2015) for US_MARKET",
+        "c": "benchmark rate, a fraction a year: max(0.03, (P_t / P_{t-104})^(1/2) - 1)",
+        "K": "valuation ratio P_{t+52} / (P_t (1 + c)); empty in the last 52 weeks",
+        "g_raw": "raw gain, K - 1",
+        "c_eff": "effective rate, (1 + c)/K - 1, a fraction a year"
+      }
+    },
+    {
+      "file": "outputs/table3_c_stats.csv",
+      "what": "Table 3 recomputed: statistics of the benchmark rate c over 419 weeks.",
+      "rows": 3,
+      "columns": {
+        "asset": "BTC, US_MARKET or GLD",
+        "count": "number of weeks",
+        "mean": "mean",
+        "std": "sample standard deviation",
+        "min": "smallest value",
+        "q25": "25th percentile",
+        "median": "median",
+        "q75": "75th percentile",
+        "max": "largest value",
+        "skew": "skewness, without bias adjustment",
+        "excess_kurtosis": "kurtosis less 3, without bias adjustment; not in the paper's table"
+      }
+    },
+    {
+      "file": "outputs/table4_K_stats.csv",
+      "what": "Table 4 recomputed: statistics of the valuation ratio K over 367 weeks. Columns as in table3_c_stats.csv.",
+      "rows": 3,
+      "column_names": [
+        "asset",
+        "count",
+        "mean",
+        "std",
+        "min",
+        "q25",
+        "median",
+        "q75",
+        "max",
+        "skew",
+        "excess_kurtosis"
+      ]
+    },
+    {
+      "file": "outputs/table5_ceff_stats.csv",
+      "what": "Table 5 recomputed: statistics of the effective rate c_eff over 367 weeks. Columns as in table3_c_stats.csv.",
+      "rows": 3,
+      "column_names": [
+        "asset",
+        "count",
+        "mean",
+        "std",
+        "min",
+        "q25",
+        "median",
+        "q75",
+        "max",
+        "skew",
+        "excess_kurtosis"
+      ]
+    },
+    {
+      "file": "outputs/g_raw_stats.csv",
+      "what": "Statistics of the raw gain K - 1 (the quantity of Figure 9). Columns as in table3_c_stats.csv.",
+      "rows": 3,
+      "column_names": [
+        "asset",
+        "count",
+        "mean",
+        "std",
+        "min",
+        "q25",
+        "median",
+        "q75",
+        "max",
+        "skew",
+        "excess_kurtosis"
+      ]
+    },
+    {
+      "file": "outputs/published_vs_rebuilt.csv",
+      "what": "Each entry of the published Tables 3 to 5 beside the recomputed value.",
+      "rows": 81,
+      "columns": {
+        "table": "table3_c, table4_K or table5_ceff",
+        "asset": "asset id of this package",
+        "article_label": "the asset's label in the paper",
+        "stat": "the statistic, named as the columns of the statistics tables",
+        "published": "the value printed in the paper",
+        "rebuilt": "the value computed here",
+        "difference": "rebuilt less published",
+        "relative_difference": "difference divided by the absolute published value",
+        "equal_as_printed": "1 if rebuilt, rounded to the paper's decimals, equals published"
+      }
+    },
+    {
+      "file": "outputs/published_vs_rebuilt_summary.csv",
+      "what": "The comparison by asset.",
+      "rows": 3,
+      "columns": {
+        "asset": "asset id",
+        "entries": "number of published entries",
+        "equal_as_printed": "how many the recomputation matches at the printed precision",
+        "largest_relative_difference": "largest absolute relative difference",
+        "median_relative_difference": "median absolute relative difference"
+      }
+    },
+    {
+      "file": "outputs/text_numbers.csv",
+      "what": "Quantities the paper states in words, with the value computed here.",
+      "rows": 30,
+      "columns": {
+        "where": "the place in the paper",
+        "article_says": "the paper's statement, shortened",
+        "quantity": "what is computed",
+        "asset": "asset id, `all` or `none`",
+        "value": "the computed value: a date, a fraction or a ratio"
+      }
+    }
+  ]
+}

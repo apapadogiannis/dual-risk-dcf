@@ -6,7 +6,8 @@ authors:
     given-names: Agisilaos
     orcid: "https://orcid.org/0009-0002-7753-7052"
 date-released: 2026-11-23
-version: "0.1.0"
+version: "1.0.0"
+doi: "10.5281/zenodo.24465118"
 license:
   - MIT
   - CC-BY-4.0
