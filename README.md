@@ -1,10 +1,11 @@
 # From unified discounting to dual-risk: A new lens on DCF valuation
 
 [![Article](https://img.shields.io/badge/Finance%20Research%20Open-10.1016%2Fj.finr.2026.100096-1f4e79)](https://doi.org/10.1016/j.finr.2026.100096)
+[![SSRN](https://img.shields.io/badge/SSRN-10.2139%2Fssrn.5252774-1f4e79)](https://doi.org/10.2139/ssrn.5252774)
 [![replication](https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml/badge.svg)](https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml)
 
 Replication package for the paper by Agisilaos Papadogiannis, published in *Finance Research Open* 2(1), 100096 (2026).
-Paper: `paper/finr-2-100096.pdf` (published version, open access under CC BY 4.0); journal page: [doi:10.1016/j.finr.2026.100096](https://doi.org/10.1016/j.finr.2026.100096).
+Paper: `paper/finr-2-100096.pdf` (published version, open access under CC BY 4.0); journal page: [doi:10.1016/j.finr.2026.100096](https://doi.org/10.1016/j.finr.2026.100096); preprint on SSRN: [doi:10.2139/ssrn.5252774](https://doi.org/10.2139/ssrn.5252774).
 Calculator and MCP server for the paper's formulas, for your own forecasts and prices: [apapadogiannis/dual-risk-calculator](https://github.com/apapadogiannis/dual-risk-calculator).
 
 ## What this is
@@ -159,6 +160,7 @@ results follow from the data and the code, not that the data or the argument is 
 
 > Papadogiannis, A. (2026). "From unified discounting to dual-risk: A new lens on DCF valuation." *Finance Research Open* 2(1), 100096.
 > https://doi.org/10.1016/j.finr.2026.100096
+> SSRN: https://doi.org/10.2139/ssrn.5252774
 
 ## Disclaimer
 

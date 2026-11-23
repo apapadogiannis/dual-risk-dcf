@@ -28,6 +28,11 @@
     },
     {
       "relation": "isSupplementTo",
+      "identifier": "https://ssrn.com/abstract=5252774",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementTo",
       "identifier": "https://github.com/apapadogiannis/dual-risk-dcf",
       "scheme": "url"
     }

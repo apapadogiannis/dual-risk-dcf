@@ -1,0 +1,190 @@
+# The statements of llms.txt and of outputs/results.json that are specific to this package.
+# scripts/make_guide.py combines them with CITATION.cff and the stored result tables. No result of
+# the paper is written here: every headline figure names the table cell it is read from.
+
+ssrn = "10.2139/ssrn.5252774"
+data_as_of = "Daily prices from 1 January 2015 to 30 December 2024. Bitcoin and US equity data retrieved 23 November 2026; gold retrieved in 2025."
+units = "Rates (c, c_eff) are fractions a year (0.13 is 13% a year). K is a ratio; the raw gain is K - 1. Shares are fractions of the weeks. Relative differences are fractions of the published value."
+describe_as = "Papadogiannis (2026), \"From unified discounting to dual-risk: A new lens on DCF valuation\", Finance Research Open 2(1), with its replication package."
+what = "Code, data and stored results for the one computation of a theory paper on discounted cash flow valuation. The paper separates a benchmark cost of capital c, set outside the asset, from a valuation ratio K = fair value / valuation, and illustrates both on weekly prices of Bitcoin, US equities and gold: c from each asset's own trailing two-year return, K from the price one year later. The package recomputes that illustration and sets each published table entry beside the recomputed one. The published article is in paper/."
+third_party = "data/btc_daily.csv is the PriceUSD series of the Coin Metrics community data, licensed CC BY-NC 4.0 (non-commercial use, with attribution). data/us_market_daily.csv is from the Kenneth R. French data library, copyright Eugene F. Fama and Kenneth R. French. data/gld_daily.csv is the daily close of SPDR Gold Shares from Yahoo Finance. Third-party data keep their own terms and are not covered by the licence above."
+results_file = "a `headline` list with the figures most often asked for, each with the table cell it comes from, and `tables`, a description of the stored result tables and their columns. The numbers themselves are in the CSV files."
+
+coverage = [
+  "Three assets, weekly, from prices of January 2015 to December 2024: Bitcoin, the US equity market (standing in for the fund VTI of the paper) and gold (the fund GLD).",
+  "The benchmark rate c for 419 weeks, from the last week of 2016 to the first week of 2025, and K, the raw gain and c_eff for 367 weeks, to the first week of 2024.",
+  "Descriptive statistics of c, K and c_eff (Tables 3 to 5 of the paper) and of the raw gain.",
+  "Each of the 81 entries of the published Tables 3 to 5 beside the value recomputed here.",
+  "The numbers stated in the text of Sections 6.1 and 7.2.",
+]
+adds = [
+  "The method as it was actually run, which differs from the paper's printed formulas in two places: the effective rate is the yearly rate (1 + c)/K - 1, not the 1/52 power printed in eq. (45), and the trailing window ends at week t, not at t-1 as printed under eq. (42).",
+  "The sample as it was: prices from January 2015 to 30 December 2024, where the paper's text says January 2017 through May 2025.",
+  "A comparison of every published table entry with the recomputed one (outputs/published_vs_rebuilt.csv). Gold uses the paper's own prices and agrees at the printed precision in all entries but one; Bitcoin and US equities use other data sources and agree closely.",
+  "A check of the paper's verbal statements against the series (outputs/text_numbers.csv). Three do not hold: that the 3% floor hardly binds for VTI and GLD, that VTI and GLD stay within 10% of fair value, and that their effective rate stays between 0% and 30%.",
+  "From the original price file of the paper, which is not redistributed, the same code reproduces 80 of the 81 published entries at the printed precision; the other is the minimum of K for gold, printed 0.6689 for 0.66895.",
+]
+files = [
+  "outputs/weekly_series.csv: the weekly series behind Figure 6 and all the statistics.",
+  "outputs/table4_K_stats.csv and its two neighbours: Tables 3 to 5 recomputed.",
+  "outputs/published_vs_rebuilt.csv: published against recomputed, entry by entry.",
+  "outputs/text_numbers.csv: what the text says against what the series give.",
+  "figures/: Figures 6 to 10 redrawn. paper/: the published article (CC BY 4.0). data/: all inputs; the README lists the source of each.",
+]
+read = [
+  "Asset ids differ from the paper's labels: `BTC` is the paper's BTC-USD, `US_MARKET` stands in for the paper's VTI, `GLD` is GLD. The column `article_label` of outputs/published_vs_rebuilt.csv gives the paper's label.",
+  "For a number of the paper, quote the column `published`. The column `rebuilt` is this package's recomputation on its own stored data, which for Bitcoin and US equities is not the paper's data.",
+  "c is the asset's own annualized return over the trailing 104 weeks, floored at 0.03: max(0.03, (P_t / P_{t-104})^(1/2) - 1). It is a self-referential benchmark, which the paper accepts only for assets with no close substitute. A value of exactly 0.03 means the floor was binding.",
+  "K = P_{t+52} / (P_t (1 + c)). K above 1: the price that week turned out to be below the later price discounted at c. K uses a price one year later, so it is a reading in hindsight and cannot be computed for the last 52 weeks.",
+  "c_eff = (1 + c)/K - 1 is a rate per year. It is not an expected return, and it is not the weekly rate that eq. (45) of the paper prints.",
+  "The raw gain is K - 1. The paper's gain of capital for a one-year horizon is (1 + c)(K - 1), which is not stored.",
+  "Weeks end on Friday and take the last price of the week. The last week holds one day, 30 December 2024.",
+  "Statistics: sample standard deviation, quartiles by linear interpolation, skewness and excess kurtosis without bias adjustment. The paper's tables have no kurtosis column.",
+  "The weekly observations overlap: each K spans 52 weeks and each c 104, so neighbours share most of their data. 367 weeks of K are about seven independent years.",
+  "`equal_as_printed` is 1 when the recomputed value, rounded to the decimals the paper prints, equals the published one.",
+]
+not_for = [
+  "A forecast or a recommendation. K measures, in hindsight, how a price compared with a later price at a chosen benchmark rate.",
+  "Anything after December 2024. The package is a fixed record and is not updated.",
+  "Your own forecasts or prices. For those, use the author's Dual-Risk DCF Calculator and its MCP server: https://github.com/apapadogiannis/dual-risk-calculator",
+  "Statements about the fund VTI itself: the equity series here is the whole US market before fund costs.",
+  "Commercial reuse of the Coin Metrics file.",
+]
+
+[[headline]]
+what = "Mean valuation ratio K of Bitcoin over 367 weeks, as published"
+file = "published_vs_rebuilt.csv"
+row = { table = "table4_K", asset = "BTC", stat = "mean" }
+column = "published"
+decimals = 4
+unit = "ratio; above 1 means prices were on average below the later price discounted at c"
+where = "Table 4"
+
+[[headline]]
+what = "Mean valuation ratio K of Bitcoin, recomputed here on Coin Metrics prices"
+file = "table4_K_stats.csv"
+row = { asset = "BTC" }
+column = "mean"
+decimals = 4
+unit = "ratio"
+where = "Table 4"
+
+[[headline]]
+what = "Standard deviation of K for Bitcoin, as published"
+file = "published_vs_rebuilt.csv"
+row = { table = "table4_K", asset = "BTC", stat = "std" }
+column = "published"
+decimals = 4
+unit = "ratio"
+where = "Table 4"
+
+[[headline]]
+what = "Standard deviation of K for VTI, as published"
+file = "published_vs_rebuilt.csv"
+row = { table = "table4_K", asset = "US_MARKET", stat = "std" }
+column = "published"
+decimals = 4
+unit = "ratio"
+where = "Table 4"
+
+[[headline]]
+what = "Standard deviation of K for gold (GLD), as published and as recomputed on the same prices"
+file = "table4_K_stats.csv"
+row = { asset = "GLD" }
+column = "std"
+decimals = 4
+unit = "ratio"
+where = "Table 4"
+
+[[headline]]
+what = "Published table entries for gold that the recomputation matches at the printed precision, of 27"
+file = "published_vs_rebuilt_summary.csv"
+row = { asset = "GLD" }
+column = "equal_as_printed"
+decimals = 0
+unit = "entries of 27"
+where = "Tables 3 to 5"
+
+[[headline]]
+what = "Share of weeks in which gold's benchmark rate is at the 3% floor"
+file = "text_numbers.csv"
+row = { quantity = "share of weeks in which c is at the 3% floor", asset = "GLD" }
+column = "value"
+scale = 100
+decimals = 0
+unit = "per cent of 419 weeks"
+where = "Section 7.2, paragraph on the floor"
+
+[[table]]
+file = "weekly_series.csv"
+what = "The weekly series, one row per week and asset, from the last week of 2016."
+[table.columns]
+week_ending = "the Friday that ends the week"
+asset = "BTC, US_MARKET or GLD"
+price = "the last price of the week: US dollars for BTC and GLD, an index (100 at 2 January 2015) for US_MARKET"
+c = "benchmark rate, a fraction a year: max(0.03, (P_t / P_{t-104})^(1/2) - 1)"
+K = "valuation ratio P_{t+52} / (P_t (1 + c)); empty in the last 52 weeks"
+g_raw = "raw gain, K - 1"
+c_eff = "effective rate, (1 + c)/K - 1, a fraction a year"
+
+[[table]]
+file = "table3_c_stats.csv"
+what = "Table 3 recomputed: statistics of the benchmark rate c over 419 weeks."
+[table.columns]
+asset = "BTC, US_MARKET or GLD"
+count = "number of weeks"
+mean = "mean"
+std = "sample standard deviation"
+min = "smallest value"
+q25 = "25th percentile"
+median = "median"
+q75 = "75th percentile"
+max = "largest value"
+skew = "skewness, without bias adjustment"
+excess_kurtosis = "kurtosis less 3, without bias adjustment; not in the paper's table"
+
+[[table]]
+file = "table4_K_stats.csv"
+what = "Table 4 recomputed: statistics of the valuation ratio K over 367 weeks. Columns as in table3_c_stats.csv."
+
+[[table]]
+file = "table5_ceff_stats.csv"
+what = "Table 5 recomputed: statistics of the effective rate c_eff over 367 weeks. Columns as in table3_c_stats.csv."
+
+[[table]]
+file = "g_raw_stats.csv"
+what = "Statistics of the raw gain K - 1 (the quantity of Figure 9). Columns as in table3_c_stats.csv."
+
+[[table]]
+file = "published_vs_rebuilt.csv"
+what = "Each entry of the published Tables 3 to 5 beside the recomputed value."
+[table.columns]
+table = "table3_c, table4_K or table5_ceff"
+asset = "asset id of this package"
+article_label = "the asset's label in the paper"
+stat = "the statistic, named as the columns of the statistics tables"
+published = "the value printed in the paper"
+rebuilt = "the value computed here"
+difference = "rebuilt less published"
+relative_difference = "difference divided by the absolute published value"
+equal_as_printed = "1 if rebuilt, rounded to the paper's decimals, equals published"
+
+[[table]]
+file = "published_vs_rebuilt_summary.csv"
+what = "The comparison by asset."
+[table.columns]
+asset = "asset id"
+entries = "number of published entries"
+equal_as_printed = "how many the recomputation matches at the printed precision"
+largest_relative_difference = "largest absolute relative difference"
+median_relative_difference = "median absolute relative difference"
+
+[[table]]
+file = "text_numbers.csv"
+what = "Quantities the paper states in words, with the value computed here."
+[table.columns]
+where = "the place in the paper"
+article_says = "the paper's statement, shortened"
+quantity = "what is computed"
+asset = "asset id, `all` or `none`"
+value = "the computed value: a date, a fraction or a ratio"
