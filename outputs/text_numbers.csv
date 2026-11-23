@@ -1,0 +1,31 @@
+where,article_says,quantity,asset,value
+Section 7.2,sample spans January 2017 through May 2025,first week with a benchmark rate c,all,2016-12-30
+Section 7.2,sample spans January 2017 through May 2025,last week with a benchmark rate c,all,2025-01-03
+Section 7.2,sample spans January 2017 through May 2025,last week with a valuation ratio K,all,2024-01-05
+Section 7.2,weekly total-return data,first week of prices,all,2015-01-02
+Sensitivity to c_min,floor has almost no effect on VTI or GLD; Bitcoin is frequently at the floor,share of weeks in which c is at the 3% floor,BTC,0.20047732696897375
+Sensitivity to c_min,floor has almost no effect on VTI or GLD; Bitcoin is frequently at the floor,share of weeks in which c is at the 3% floor,US_MARKET,0.15274463007159905
+Sensitivity to c_min,floor has almost no effect on VTI or GLD; Bitcoin is frequently at the floor,share of weeks in which c is at the 3% floor,GLD,0.30787589498806683
+Dynamic behavior,Bitcoin's c peaks above 500%,largest c,BTC,5.182132072217137
+Dynamic behavior,in deep downturns K > 2,share of weeks with K above 2,BTC,0.335149863760218
+Dynamic behavior,in boom phases K < 0.5,share of weeks with K below 0.5,BTC,0.3678474114441417
+Dynamic behavior,VTI and GLD stay within +/-10% of fair value,share of weeks with K between 0.9 and 1.1,US_MARKET,0.335149863760218
+Descriptive statistics,interquartile ranges within +/-10%,25th percentile of K,US_MARKET,0.8722980551833375
+Descriptive statistics,interquartile ranges within +/-10%,75th percentile of K,US_MARKET,1.1690817131784872
+Descriptive statistics,VTI and GLD stay within roughly 0%-30%,share of weeks with c_eff between 0 and 0.30,US_MARKET,0.3242506811989101
+Descriptive statistics,VTI and GLD stay within roughly 0%-30%,smallest c_eff,US_MARKET,-0.42144707121494307
+Descriptive statistics,VTI and GLD stay within roughly 0%-30%,largest c_eff,US_MARKET,1.2897535955229746
+Dynamic behavior,VTI and GLD stay within +/-10% of fair value,share of weeks with K between 0.9 and 1.1,GLD,0.4196185286103542
+Descriptive statistics,interquartile ranges within +/-10%,25th percentile of K,GLD,0.9081351414962298
+Descriptive statistics,interquartile ranges within +/-10%,75th percentile of K,GLD,1.1557391138477326
+Descriptive statistics,VTI and GLD stay within roughly 0%-30%,share of weeks with c_eff between 0 and 0.30,GLD,0.3896457765667575
+Descriptive statistics,VTI and GLD stay within roughly 0%-30%,smallest c_eff,GLD,-0.2651643805616729
+Descriptive statistics,VTI and GLD stay within roughly 0%-30%,largest c_eff,GLD,0.9281522973163092
+Distributional insights,Bitcoin raw gains up to +900%,largest raw gain K - 1,BTC,9.903246229729028
+Distributional insights,VTI raw gain within +/-75%,smallest raw gain,US_MARKET,-0.38580904247008463
+Distributional insights,VTI raw gain within +/-75%,largest raw gain,US_MARKET,0.7803038386876164
+Distributional insights,GLD raw gain within +/-40%,smallest raw gain,GLD,-0.3310457028843
+Distributional insights,GLD raw gain within +/-40%,largest raw gain,GLD,0.401674024440027
+Distributional insights,GLD c of about 5%,median c,GLD,0.0610210798943549
+"Section 6.1, under Fig. 3","at c = 10% and five years, g = 0.2 gives K of about 1.12 and g = -0.2 about 0.88",K for g = 0.2,none,1.124184264611831
+"Section 6.1, under Fig. 3","at c = 10% and five years, g = 0.2 gives K of about 1.12 and g = -0.2 about 0.88",K for g = -0.2,none,0.875815735388169

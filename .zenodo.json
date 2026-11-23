@@ -1,0 +1,35 @@
+{
+  "title": "From unified discounting to dual-risk: A new lens on DCF valuation: replication package",
+  "upload_type": "software",
+  "description": "Replication package for the article published in Finance Research Open 2(1), 100096 (2026). The article separates the two jobs a single discount rate does in a discounted cash flow value: a benchmark cost of capital c, set outside the asset, and a valuation ratio K that carries the gap between two views of the asset's benefits. This package reproduces the article's one computation, the price-based illustration on Bitcoin, US equities and gold (weekly series, Tables 3 to 5, Figures 6 to 10), sets each of the 81 published table entries beside the recomputed one, and recomputes the numbers stated in the text. Gold uses the article's prices; Bitcoin (Coin Metrics, CC BY-NC 4.0) and US equities (Kenneth R. French data library) use other sources and are reproduced closely, with every difference listed. Includes the published article (CC BY 4.0), all data, scripts, result tables and figures.",
+  "creators": [
+    {
+      "name": "Papadogiannis, Agisilaos",
+      "orcid": "0009-0002-7753-7052"
+    }
+  ],
+  "keywords": [
+    "discounted cash flow",
+    "cost of capital",
+    "valuation ratio",
+    "dual-risk",
+    "gain of capital",
+    "effective discount rate",
+    "Bitcoin",
+    "gold",
+    "equities"
+  ],
+  "license": "MIT",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "10.1016/j.finr.2026.100096",
+      "scheme": "doi"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/apapadogiannis/dual-risk-dcf",
+      "scheme": "url"
+    }
+  ]
+}
