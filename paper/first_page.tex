@@ -1,0 +1,56 @@
+% The first page of the PDF posted on SSRN and stored in this package: title, abstract and credits.
+% The published article (Finance Research Open, CC BY 4.0) follows it unchanged; see build_pdf.sh.
+\documentclass[10pt]{article}
+\usepackage[paperwidth=595.276bp,paperheight=793.701bp,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,
+ pdftitle={From unified discounting to dual-risk: A new lens on DCF valuation},
+ pdfauthor={Agisilaos Papadogiannis}]{hyperref}
+\pagestyle{empty}
+
+\title{\Large From unified discounting to dual-risk:\\ A new lens on DCF valuation}
+\author{Agisilaos Papadogiannis\thanks{Independent Researcher (PhD, MBA). Correspondence: \href{mailto:apapadogiannis@gmail.com}{apapadogiannis@gmail.com}. ORCID: \href{https://orcid.org/0009-0002-7753-7052}{0009-0002-7753-7052}.}}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\vspace{-1.5em}
+
+\begin{abstract}
+\noindent Traditional discounted cash-flow (DCF) valuation often compresses uncertainty into a single discount rate. This blends two conceptually distinct objects: an external opportunity cost for priced risk and time, and belief-driven distortion in cash-flow (benefit) expectations. As a result, a valuation gap cannot be attributed cleanly to priced premia versus forecast distortion. We formalize this identification problem across common implementations, including CAPM-based discounting, WACC-plus-premium rules, and implied-cost approaches. We also argue that discounting often becomes self-referential in practice: when required-return inputs are inferred from, calibrated to, or primarily validated by the same market prices they are meant to benchmark, the opportunity-cost interpretation of discounting is violated.
+
+We develop a dual-risk framework with two primitives: a market-based cost of capital \(c\) and a valuation ratio \(K\) that captures distortion in expected benefits relative to a benchmark. The wedge captured by \(K\) can arise from forecast error, disagreement, informational frictions, behavioral distortions, or model misspecification, and it may be persistent or transitory. From \((c,K)\) we derive the ex-ante gain of capital \(g\) and an effective hurdle rate \(c_{\mathrm{eff}}\), decomposing expected return into benchmark discounting and expectation distortion. A parsimonious market-clearing equilibrium clarifies how heterogeneous wedges \(K\) can persist in prices under belief heterogeneity and limits to arbitrage. We then propose a proxying scheme for \(c\) and \(K\) from observable total-return prices given a chosen benchmark rate, and illustrate it on equity (VTI), gold (GLD), and Bitcoin (BTC--USD), where non-income assets can load more heavily on the wedge component. Overall, the framework offers an accessible way to separate opportunity cost from cash-flow forecast distortion within DCF valuation.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Discounted cash flow, Cost of capital, Expectational risk, Dual-risk, Valuation ratio, Gain of capital, Effective discount rate
+
+\vspace{0.5em}
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{0.3em}
+{\small
+\renewcommand{\arraystretch}{1.1}
+\newcommand{\lnk}[2]{\href{#1}{\texttt{#2}}}
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash\bfseries}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.75\textwidth}@{}}
+Published in &
+\textit{Finance Research Open} 2(1), 2026, article 100096,\newline \lnk{https://doi.org/10.1016/j.finr.2026.100096}{doi.org/10.1016/j.finr.2026.100096}\newline
+Please cite the published article.\\\noalign{\vskip 0.55em}
+Calculator &
+Dual-Risk DCF Calculator, the paper's formulas for your own forecasts or prices:\newline \lnk{https://apapadogiannis.github.io/dual-risk-calculator/}{apapadogiannis.github.io/dual-risk-calculator}\newline
+A companion tool, separate from the article. It runs in the browser, and as an MCP server for AI assistants.\\\noalign{\vskip 0.55em}
+Code and data &
+\lnk{https://github.com/apapadogiannis/dual-risk-dcf}{github.com/apapadogiannis/dual-risk-dcf}\newline
+Archived at \lnk{https://doi.org/10.5281/zenodo.24465118}{doi.org/10.5281/zenodo.24465118}\newline
+Reproduces the price-based illustration of Section 7 and sets each published table entry beside the recomputed one.\\\noalign{\vskip 0.55em}
+Also by the author &
+Other papers, code and tools: \lnk{https://github.com/apapadogiannis}{github.com/apapadogiannis}\\\noalign{\vskip 0.55em}
+Notice &
+\copyright\ 2026 The Author. Published by Elsevier B.V. Open access under the Creative Commons Attribution 4.0 International License. The published article follows this page.
+\end{tabular}
+}
+\end{document}

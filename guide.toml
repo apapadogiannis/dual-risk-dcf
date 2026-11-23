@@ -29,7 +29,7 @@ files = [
   "outputs/table4_K_stats.csv and its two neighbours: Tables 3 to 5 recomputed.",
   "outputs/published_vs_rebuilt.csv: published against recomputed, entry by entry.",
   "outputs/text_numbers.csv: what the text says against what the series give.",
-  "figures/: Figures 6 to 10 redrawn. paper/: the published article (CC BY 4.0). data/: all inputs; the README lists the source of each.",
+  "figures/: Figures 6 to 10 redrawn. paper/manuscript.pdf: the published article (CC BY 4.0), preceded by one page of credits. data/: all inputs; the README lists the source of each.",
 ]
 read = [
   "Asset ids differ from the paper's labels: `BTC` is the paper's BTC-USD, `US_MARKET` stands in for the paper's VTI, `GLD` is GLD. The column `article_label` of outputs/published_vs_rebuilt.csv gives the paper's label.",

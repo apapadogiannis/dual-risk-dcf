@@ -18,7 +18,7 @@
     "preprint": "https://doi.org/10.2139/ssrn.5252774",
     "repository": "https://github.com/apapadogiannis/dual-risk-dcf",
     "archive": "https://doi.org/10.5281/zenodo.24465118",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "released": "2026-11-23",
     "data_as_of": "Daily prices from 1 January 2015 to 30 December 2024. Bitcoin and US equity data retrieved 23 November 2026; gold retrieved in 2025.",
     "units": "Rates (c, c_eff) are fractions a year (0.13 is 13% a year). K is a ratio; the raw gain is K - 1. Shares are fractions of the weeks. Relative differences are fractions of the published value.",
@@ -30,7 +30,7 @@
       "third_party_data": "data/btc_daily.csv is the PriceUSD series of the Coin Metrics community data, licensed CC BY-NC 4.0 (non-commercial use, with attribution). data/us_market_daily.csv is from the Kenneth R. French data library, copyright Eugene F. Fama and Kenneth R. French. data/gld_daily.csv is the daily close of SPDR Gold Shares from Yahoo Finance. Third-party data keep their own terms and are not covered by the licence above."
     },
     "cite_as": "Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Finance Research Open, 2(1), 100096. https://doi.org/10.1016/j.finr.2026.100096",
-    "cite_package": "Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Replication package, version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.24465118",
+    "cite_package": "Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Replication package, version 1.0.1. Zenodo. https://doi.org/10.5281/zenodo.24465118",
     "describe_as": "Papadogiannis (2026), \"From unified discounting to dual-risk: A new lens on DCF valuation\", Finance Research Open 2(1), with its replication package.",
     "guide": "llms.txt"
   },

@@ -10,7 +10,7 @@
 Replication package by Agisilaos Papadogiannis (https://github.com/apapadogiannis).
 Published in Finance Research Open, 2(1), 2026, article 100096: https://doi.org/10.1016/j.finr.2026.100096
 Code and data: https://github.com/apapadogiannis/dual-risk-dcf  Archive: https://doi.org/10.5281/zenodo.24465118
-Version 1.0.0, released 2026-11-23. A package is a fixed record: it changes only by a new
+Version 1.0.1, released 2026-11-23. A package is a fixed record: it changes only by a new
 release, and a release that changes a reported number gets a new major version.
 This file is written for AI agents and other programs. People should start at the README.
 
@@ -94,8 +94,8 @@ One CSV file each in outputs/. The columns of each are described in outputs/resu
 - outputs/table4_K_stats.csv and its two neighbours: Tables 3 to 5 recomputed.
 - outputs/published_vs_rebuilt.csv: published against recomputed, entry by entry.
 - outputs/text_numbers.csv: what the text says against what the series give.
-- figures/: Figures 6 to 10 redrawn. paper/: the published article (CC BY 4.0). data/: all inputs;
-  the README lists the source of each.
+- figures/: Figures 6 to 10 redrawn. paper/manuscript.pdf: the published article (CC BY 4.0),
+  preceded by one page of credits. data/: all inputs; the README lists the source of each.
 
 Raw files: https://raw.githubusercontent.com/apapadogiannis/dual-risk-dcf/main/<path>, for example https://raw.githubusercontent.com/apapadogiannis/dual-risk-dcf/main/outputs/results.json
 
@@ -151,7 +151,7 @@ the licence above.
 
 Cite as: Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Finance Research Open, 2(1), 100096. https://doi.org/10.1016/j.finr.2026.100096
 
-The package itself: Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Replication package, version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.24465118
+The package itself: Papadogiannis, A. (2026). From unified discounting to dual-risk: A new lens on DCF valuation. Replication package, version 1.0.1. Zenodo. https://doi.org/10.5281/zenodo.24465118
 
 To describe the source in a sentence: Papadogiannis (2026), "From unified discounting to dual-risk:
 A new lens on DCF valuation", Finance Research Open 2(1), with its replication package.

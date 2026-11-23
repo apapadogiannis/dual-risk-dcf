@@ -6,7 +6,7 @@
 [![replication](https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml/badge.svg)](https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml)
 
 Replication package for the paper by Agisilaos Papadogiannis, published in *Finance Research Open* 2(1), 100096 (2026).
-Paper: `paper/finr-2-100096.pdf` (published version, open access under CC BY 4.0); journal page: [doi:10.1016/j.finr.2026.100096](https://doi.org/10.1016/j.finr.2026.100096); preprint on SSRN: [doi:10.2139/ssrn.5252774](https://doi.org/10.2139/ssrn.5252774).
+Paper: `paper/manuscript.pdf` (the published article, open access under CC BY 4.0, preceded by one page of credits); journal page: [doi:10.1016/j.finr.2026.100096](https://doi.org/10.1016/j.finr.2026.100096); preprint on SSRN: [doi:10.2139/ssrn.5252774](https://doi.org/10.2139/ssrn.5252774).
 Archived on Zenodo: [doi:10.5281/zenodo.24465118](https://doi.org/10.5281/zenodo.24465118).
 Calculator and MCP server for the paper's formulas, for your own forecasts and prices: [apapadogiannis/dual-risk-calculator](https://github.com/apapadogiannis/dual-risk-calculator).
 
@@ -97,7 +97,7 @@ scripts/    one script per calculation
 outputs/    every result table (CSV)
 figures/    Figures 6 to 10 (PNG and PDF)
 data/       all input data
-paper/      the published article
+paper/      the published article with its first page of credits (manuscript.pdf), and the source of that page
 run_all.sh  runs every script in order
 check_outputs.py  reruns the pipeline and checks every stored result
 ```
