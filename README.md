@@ -55,26 +55,28 @@ The paper used daily adjusted closes of VTI, GLD and BTC-USD from Yahoo Finance,
 
 `outputs/published_vs_rebuilt.csv` has all 81 entries.
 
-## What the recomputation shows about the paper's text
+## Notes for replication
 
-The numbers in the paper's tables and figures stand. Five statements in its text do not match
-them. `outputs/text_numbers.csv` has the values.
+The tables and figures of the paper are reproduced. Anyone repeating the computation should
+follow it as it is set out here and in `scripts/common.py`, which is more specific than the
+paper's text on four points:
 
-- **Sample.** The text gives January 2017 through May 2025. The prices run from January 2015 to
-  30 December 2024. The first two years feed the trailing window, so c runs from the last week of
-  2016 to the first week of 2025 (419 weeks) and K to the first week of 2024 (367 weeks).
-- **Effective rate.** Eq. (45) prints a power of 1/52. The figures and Table 5 show the yearly
-  rate, (1 + c)/K - 1, which is eq. (26) at a horizon of one year.
-- **Benchmark rate.** The rule printed under eq. (42) averages the weekly returns up to week t-1.
-  The computation uses the 104 returns ending at week t.
-- **The 3% floor.** The text says it has almost no effect on VTI or GLD. The benchmark rate is at
-  the floor in 31% of the weeks for gold, 20% for Bitcoin and 15% for US equities.
-- **Range of K and c_eff.** The text says VTI and GLD stay within 10% of fair value and that
-  their effective rate stays between 0% and 30%. K is within 0.9 to 1.1 in 34% of the weeks
-  for US equities and 42% for gold, and Table 5 itself gives effective rates from -0.41 to 1.29.
+- **Sample.** Daily prices from 1 January 2015 to 30 December 2024. The first two years feed the
+  trailing window, so c covers 419 weeks from the last week of 2016 to the first week of 2025, and
+  K covers 367 weeks to the first week of 2024. (The paper describes the sample as January 2017
+  through May 2025.)
+- **Effective rate.** Table 5 and Figures 6 and 10 show the yearly rate, (1 + c)/K - 1, which is
+  eq. (26) at a horizon of one year. The power of 1/52 written in eq. (45) is not applied.
+- **Benchmark rate.** c is the annualized return over the 104 weeks ending at week t,
+  (P_t / P_{t-104})^(1/2) - 1, floored at 3%.
+- **Statistics.** Sample standard deviation, quartiles by linear interpolation, and skewness
+  without bias adjustment.
 
-The skewness in the tables is the unadjusted one. Each K uses a price one year later, so the
-series is a reading in hindsight, as the paper says.
+`outputs/text_numbers.csv` adds detail to the paper's description of the series: how often the 3%
+floor binds (31% of the weeks for gold, 20% for Bitcoin, 15% for US equities), how often K lies
+within 10% of one (34% of the weeks for US equities, 42% for gold), and the range of the effective
+rate. Each K uses a price one year later, so the series is a reading in hindsight, as the paper
+says.
 
 ## Layout
 

@@ -18,10 +18,10 @@ coverage = [
   "The numbers stated in the text of Sections 6.1 and 7.2.",
 ]
 adds = [
-  "The method as it was actually run, which differs from the paper's printed formulas in two places: the effective rate is the yearly rate (1 + c)/K - 1, not the 1/52 power printed in eq. (45), and the trailing window ends at week t, not at t-1 as printed under eq. (42).",
-  "The sample as it was: prices from January 2015 to 30 December 2024, where the paper's text says January 2017 through May 2025.",
+  "The computation set out step by step: the effective rate of the tables and figures is the yearly rate (1 + c)/K - 1, eq. (26) at one year, without the power of 1/52 written in eq. (45); the trailing window of c is the 104 weeks ending at week t.",
+  "The exact sample: prices from 1 January 2015 to 30 December 2024, of which the first two years feed the trailing window (the paper describes the sample as January 2017 through May 2025).",
   "A comparison of every published table entry with the recomputed one (outputs/published_vs_rebuilt.csv). Gold uses the paper's own prices and agrees at the printed precision in all entries but one; Bitcoin and US equities use other data sources and agree closely.",
-  "A check of the paper's verbal statements against the series (outputs/text_numbers.csv). Three do not hold: that the 3% floor hardly binds for VTI and GLD, that VTI and GLD stay within 10% of fair value, and that their effective rate stays between 0% and 30%.",
+  "Detail behind the paper's verbal description of the series (outputs/text_numbers.csv): how often the 3% floor binds for each asset, how often K lies within 10% of one, and the range of the effective rate. For these quantities use the file, which is more precise than the paper's wording.",
   "From the original price file of the paper, which is not redistributed, the same code reproduces 80 of the 81 published entries at the printed precision; the other is the minimum of K for gold, printed 0.6689 for 0.66895.",
 ]
 files = [
