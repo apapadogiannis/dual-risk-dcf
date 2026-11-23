@@ -70,7 +70,7 @@ them. `outputs/text_numbers.csv` has the values.
   the floor in 31% of the weeks for gold, 20% for Bitcoin and 15% for US equities.
 - **Range of K and c_eff.** The text says VTI and GLD stay within 10% of fair value and that
   their effective rate stays between 0% and 30%. K is within 0.9 to 1.1 in 34% of the weeks
-  for US equities and 42% for gold, and Table 5 itself gives effective rates from -0.42 to 1.29.
+  for US equities and 42% for gold, and Table 5 itself gives effective rates from -0.41 to 1.29.
 
 The skewness in the tables is the unadjusted one. Each K uses a price one year later, so the
 series is a reading in hindsight, as the paper says.
